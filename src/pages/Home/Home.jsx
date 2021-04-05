@@ -1,10 +1,11 @@
 
+import './Home.scss'
+
 import { Component } from 'react'
 import { userService } from '../../services/userService'
 import { bitcoinService } from '../../services/bitcoinService'
 import { Contacts } from '../Contacts'
-
-import './Home.scss'
+import { Statistics } from '../Statistics'
 
 export class Home extends Component {
     state = {
@@ -33,6 +34,7 @@ export class Home extends Component {
                         <p>The current bitcoin rate is: 1 USD = {rate} bitcoins </p>
                     </div>
                     <Contacts />
+                    <Statistics />
                 </section>
             )
         );

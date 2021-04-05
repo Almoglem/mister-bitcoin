@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import {contactService} from '../../services/contactService'
+import { contactService } from '../../services/contactService'
 
 import './ContactDetails.scss'
 
@@ -13,15 +13,20 @@ export class ContactDetails extends Component {
         this.loadContact();
     }
 
-    async loadContact(){
+    async loadContact() {
         const id = this.props.contactId;
         const contact = await contactService.getContactById(id);
-        this.setState({contact}, ()=>{console.log('contact', this.state.contact);})
+        this.setState({ contact })
     }
     render() {
+        const { contact } = this.state
         return (
+            contact &&
             <div>
-            HI IM CONTACT DETAILS
+                <img src={`https://robohash.org/${contact._id}.png`} alt="contact-img" />
+                <h4>{contact.name}</h4>
+                <p>{contact.email}</p>
+                <p>{contact.phone}</p>
             </div>
         )
     }
