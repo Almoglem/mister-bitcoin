@@ -2,6 +2,7 @@
 import { Component } from 'react'
 import { contactService } from '../../services/contactService'
 import { ContactList } from '../../cmps/ContactList'
+import {ContactDetails} from '../ContactDetails'
 
 import './Contacts.scss'
 
@@ -34,7 +35,7 @@ export class Contacts extends Component {
                 selectContact={this.selectContact}
                 />}
                 {selectedContactId && 
-               <h1>contact was selcted</h1>
+               <ContactDetails contactId = {selectedContactId}/>
                 }
             </div>
         )
