@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom';
 import { contactService } from '../../services/contactService'
 
 import './ContactDetails.scss'
@@ -11,6 +12,11 @@ export class ContactDetails extends Component {
 
     componentDidMount() {
         this.loadContact();
+    }
+
+    removeContact = async (contactId) => {
+        await contactService.deleteContact(contactId)
+        this.props.history.push('/contacts')
     }
 
     async loadContact() {
@@ -27,6 +33,9 @@ export class ContactDetails extends Component {
                 <h4>{contact.name}</h4>
                 <p>{contact.email}</p>
                 <p>{contact.phone}</p>
+                <Link to={'/contact/edit/' + contact._id}>Edit</Link>
+                <button onClick={() => this.removeContact(contact._id)}>Delete</button>
+                {/* TODO: add a 'next contact' option */}
             </div>
         )
     }

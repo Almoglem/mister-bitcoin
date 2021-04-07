@@ -5,6 +5,7 @@ import { Contacts } from './pages/Contacts'
 import { ContactDetails } from './pages/ContactDetails';
 import { Statistics } from './pages/Statistics';
 import { AppHeader } from './cmps/AppHeader'
+import { ContactEdit } from './pages/ContactEdit/ContactEdit';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <div className="App">
         <AppHeader />
         <Switch>
+          <Route component={ContactEdit} path='/contact/edit/:id?' />
           <Route component={ContactDetails} path='/contact/:id' />
           <Route component={Contacts} path='/contacts' />
           <Route component={Statistics} path='/statistics' />

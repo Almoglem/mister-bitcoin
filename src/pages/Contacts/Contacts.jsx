@@ -5,6 +5,7 @@ import { ContactFilter } from '../../cmps/ContactFilter'
 import { ContactList } from '../../cmps/ContactList'
 
 import './Contacts.scss'
+import { Link } from 'react-router-dom'
 
 export class Contacts extends Component {
     state = {
@@ -31,6 +32,7 @@ export class Contacts extends Component {
                 <ContactList
                     contacts={contacts}
                 />
+                <Link to="/contact/edit">Add Contact</Link>
             </div>
         )
     }
