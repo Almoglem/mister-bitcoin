@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+/* basics */
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}

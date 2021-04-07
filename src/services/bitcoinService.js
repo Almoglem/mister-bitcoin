@@ -7,17 +7,18 @@ export const bitcoinService = {
     getTradeVolume
 }
 
-async function getRate(coins) {
+async function getRate(coins, currency = 'USD') {
     const rate = (storageService.load('rate'));
     if (rate) {
         return rate;
     }
     try {
         const { data } = await Axios.get(
-            `https://blockchain.info/tobtc?currency=USD&value=${coins}`
+            `https://blockchain.info/ticker`
         );
-        storageService.store('rate', data);
-        return data;
+        const res = data[currency].last * coins;
+        storageService.store('rate', res);
+        return res;
     }
     catch (err) {
         console.log(err);

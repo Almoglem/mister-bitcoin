@@ -1,0 +1,23 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 20px;
+
+    ul {
+        margin-inline-start: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        margin-inline-start: 10px;
+    }
+
+
+    .active-nav {
+        font-weight: bold;
+        color: rgb(160, 55, 55);
+    }
+}

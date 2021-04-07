@@ -1,14 +1,13 @@
-
+import { Link } from 'react-router-dom'
 import './ContactPreview.scss'
 
-export function ContactPreview({ contact, selectContact }) {
+export function ContactPreview({ contact }) {
     return (
-        <div 
-            className="contact-preview" 
-            onClick ={() => selectContact(contact._id)}
-             >
-            {contact.name}
-        </div>
+        <Link to={'/contact/' + contact._id}>
+            <div className="contact-preview">
+                {contact.name}
+            </div>
+        </Link>
     )
 
 }

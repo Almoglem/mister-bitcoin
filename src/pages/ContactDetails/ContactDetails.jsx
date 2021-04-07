@@ -14,7 +14,7 @@ export class ContactDetails extends Component {
     }
 
     async loadContact() {
-        const id = this.props.contactId;
+        const id = this.props.match.params.id;
         const contact = await contactService.getContactById(id);
         this.setState({ contact })
     }

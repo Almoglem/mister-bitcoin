@@ -4,8 +4,6 @@ import './Home.scss'
 import { Component } from 'react'
 import { userService } from '../../services/userService'
 import { bitcoinService } from '../../services/bitcoinService'
-import { Contacts } from '../Contacts'
-import { Statistics } from '../Statistics'
 
 export class Home extends Component {
     state = {
@@ -14,14 +12,13 @@ export class Home extends Component {
     }
     componentDidMount() {
         this.loadUser();
-        this.loadRate();
     }
     async loadUser() {
         const user = await userService.getUser();
-        this.setState({ user },)
+        this.setState({ user }, () => { this.loadRate() })
     }
     async loadRate() {
-        const rate = await bitcoinService.getRate(1);
+        const rate = await bitcoinService.getRate(this.state.user.coins);
         this.setState({ rate })
     }
     render() {
@@ -30,11 +27,10 @@ export class Home extends Component {
             user && rate && (
                 <section>
                     <div>
-                        <p>Welcome, {user.name}. You have {user.coins} coins</p>
-                        <p>The current bitcoin rate is: 1 USD = {rate} bitcoins </p>
+                        <p>Welcome, {user.name}. You have {user.coins} bitcoins</p>
+                        <p>Equel to {rate} USD </p>
                     </div>
-                    <Contacts />
-                    <Statistics />
+
                 </section>
             )
         );
