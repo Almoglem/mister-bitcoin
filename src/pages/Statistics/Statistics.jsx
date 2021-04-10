@@ -20,14 +20,14 @@ export class Statistics extends Component {
         const data = await bitcoinService.getMarketPrice();
         const marketPriceData = {};
         marketPriceData.vals = data.values.map(coord => coord.y);
-        marketPriceData.labels = data.values.map(coord => moment.unix(coord.x).format("DD/MM/YYYY"))
+        marketPriceData.labels = data.values.map(coord => moment.unix(coord.x).format("MMM DD, YY"))
         this.setState({ marketPriceData })
     }
     async LoadTradeVolumeData() {
         const data = await bitcoinService.getTradeVolume();
         const tradeVolumeData = {};
         tradeVolumeData.vals = data.values.map(coord => coord.y);
-        tradeVolumeData.labels = data.values.map(coord => moment.unix(coord.x).format("DD/MM/YYYY"))
+        tradeVolumeData.labels = data.values.map(coord => moment.unix(coord.x).format("MMM DD, YY"))
         this.setState({ tradeVolumeData })
     }
 
@@ -35,7 +35,6 @@ export class Statistics extends Component {
         const { marketPriceData, tradeVolumeData } = this.state
         return (
             <div>
-                <h3>Statistics</h3>
                 <Charts marketPriceData={marketPriceData}
                     tradeVolumeData={tradeVolumeData}
                 />

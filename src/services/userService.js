@@ -1,4 +1,5 @@
 import { storageService } from './storageService.js'
+import { utilService } from './utilService.js'
 
 export const userService = {
     getUser,
@@ -38,12 +39,13 @@ function transferFund(transferAmount) {
 
 function addMove(contactId, contactName, transferAmount){
     const move = {
+        _id: utilService.makeId(),
         toId: contactId,
         to:contactName,
         at: Date.now(),
-        amount: transferAmount
+        amount: transferAmount,
     }
-    gUser.moves.push(move);
+    gUser.moves.unshift(move);
     storageService.store(STORAGE_KEY, gUser)
     return Promise.resolve({ ...gUser });
 }
@@ -54,3 +56,4 @@ function _loadUser() {
     storageService.store(STORAGE_KEY, user)
     return user
 }
+

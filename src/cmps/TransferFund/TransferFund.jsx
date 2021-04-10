@@ -15,6 +15,7 @@ export class TransferFund extends Component {
     transferFund = async (ev) => {
         ev.preventDefault();
         this.props.transferFund(this.state.transferAmount);
+        this.state.transferAmount = '';
     }
 
     render() {

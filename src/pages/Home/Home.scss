@@ -1,1 +1,10 @@
-// .home {}
+.home {
+    .balance-container {
+        margin-bottom: 20px;
+
+        .bitcoin-balance {
+            color: rgb(45, 138, 45);
+            font-weight: bold;
+        }
+    }
+}

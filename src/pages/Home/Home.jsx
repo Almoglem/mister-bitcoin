@@ -5,6 +5,9 @@ import { Component } from 'react'
 import { bitcoinService } from '../../services/bitcoinService'
 import { connect } from 'react-redux';
 import { setUser } from '../../store/actions/userActions';
+import {MovesList} from '../../cmps/MovesList'
+import { Player } from '@lottiefiles/react-lottie-player';
+
 
 class _Home extends Component {
     state = {
@@ -24,12 +27,24 @@ class _Home extends Component {
         const { rate } = this.state
         return (
             user && rate && (
-                <section>
+                <section className="home">
                     <div>
-                        <p>Welcome, {user.name}. You have {user.coins} bitcoins</p>
-                        <p>Equel to {rate} USD </p>
+                        <Player
+                            autoplay
+                            loop
+                            src="https://assets7.lottiefiles.com/packages/lf20_HzCLVo.json"
+                            style={{ height: '300px', width: '300px' }}
+                        >
+                        </Player>
+                        <h2>Welcome, {user.name} </h2>
+                        <div className="balance-container">
+                        <h5 className="subtitle">CURRENT BALANCE</h5>
+                        <p> BIT: <span className="bitcoin-balance"> ฿ {user.coins.toLocaleString()}  </span></p>
+                        <p> USD: $ {rate.toLocaleString()} </p>
+                        </div>
                     </div>
-
+                    <h5 className="subtitle">RECENT ACTIVITY</h5>
+                <MovesList moves={user.moves.slice(0,5)}/>
                 </section>
             )
         );

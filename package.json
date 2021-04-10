@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://almoglem.github.io/mister-bitcoin",
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.1.2",
+    "@sweetalert/with-react": "^0.1.1",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
@@ -21,6 +23,8 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.8",
+    "sweetalert2": "^10.16.0",
+    "sweetalert2-react-content": "^3.3.1",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

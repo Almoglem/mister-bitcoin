@@ -4,24 +4,20 @@ import { TransferFund } from '../../cmps/TransferFund/TransferFund';
 import { connect } from 'react-redux';
 import { getContactById, removeContact } from '../../store/actions/contactActions';
 import { transferFund, addMove } from '../../store/actions/userActions';
-import { userService } from '../../services/userService'
+import {MovesList} from  '../../cmps/MovesList';
+import {utilService} from '../../services/utilService'
 
 import './ContactDetails.scss'
 
 class _ContactDetails extends Component {
 
-    state = {
-        user: null
-    }
-
     componentDidMount() {
         this.props.getContactById(this.props.match.params.id)
-        this.loadUser();
     }
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            this.props.getRobotById(this.props.match.params.id)
+            this.props.getContactById(this.props.match.params.id)
         }
     }
 
@@ -31,17 +27,18 @@ class _ContactDetails extends Component {
     }
 
     transferFund = (amount) => {
+        if(amount > this.props.user.coins) return utilService.showMsg(`Not enough balance`)
+
         this.props.transferFund(this.props.contact._id, amount)
         this.props.addMove(this.props.contact._id, this.props.contact.name, amount)
+
+        utilService.showMsg(`Transfered ${amount} bitcoins to ${this.props.contact.name} successfuly`)
     }
 
-    async loadUser() {
-        const user = await userService.getUser();
-        this.setState({ user })
-    }
+
 
     render() {
-        const { contact } = this.props
+        const { contact, user } = this.props
         return (
             contact &&
             <div>
@@ -52,7 +49,7 @@ class _ContactDetails extends Component {
                 <Link to={'/contact/edit/' + contact._id}>Edit</Link>
                 <button onClick={this.removeContact}>Delete</button>
                 <TransferFund transferFund={this.transferFund} />
-                {/* TODO: add a 'next contact' option */}
+                <MovesList moves={ user.moves.filter(move => move.toId === contact._id)}/>
             </div>
         )
     }
@@ -60,7 +57,8 @@ class _ContactDetails extends Component {
 
 
 const mapStateToProps = state => ({
-    contact: state.contactReducer.currContact
+    contact: state.contactReducer.currContact,
+    user: state.userReducer.user
 })
 
 const mapDispatchToProps = {

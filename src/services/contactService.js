@@ -1,4 +1,5 @@
 import { storageService } from './storageService.js'
+import { utilService } from './utilService.js'
 
 export const contactService = {
   query,
@@ -79,7 +80,7 @@ function saveContact(contactToSave) {
     const idx = gContacts.findIndex(contact => contact._id === contactToSave._id)
     gContacts.splice(idx, 1, contactToSave)
   } else {
-    contactToSave._id = _makeId()
+    contactToSave._id = utilService.makeId()
     gContacts.push(contactToSave)
   }
   storageService.store(STORAGE_KEY, gContacts)
@@ -112,11 +113,3 @@ function _loadContacts() {
 }
 
 
-function _makeId(length = 10) {
-  var txt = ''
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-  for (var i = 0; i < length; i++) {
-    txt += possible.charAt(Math.floor(Math.random() * possible.length))
-  }
-  return txt
-}
