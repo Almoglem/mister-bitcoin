@@ -22,3 +22,10 @@ export function transferFund(contactId, transferAmount) {
         dispatch({ type: 'SET_USER', user: savedUser })
     }
 }
+
+export function addMove(contactId, contactName, transferAmount) {
+    return async (dispatch) => {
+        const savedUser = await userService.addMove(contactId, contactName, transferAmount)
+        dispatch({ type: 'SET_USER', user: savedUser })
+    }
+}

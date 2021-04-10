@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { TransferFund } from '../../cmps/TransferFund/TransferFund';
 import { connect } from 'react-redux';
 import { getContactById, removeContact } from '../../store/actions/contactActions';
-import { transferFund } from '../../store/actions/userActions';
+import { transferFund, addMove } from '../../store/actions/userActions';
 import { userService } from '../../services/userService'
 
 import './ContactDetails.scss'
@@ -31,13 +31,8 @@ class _ContactDetails extends Component {
     }
 
     transferFund = (amount) => {
-        console.log('amount is', amount);
         this.props.transferFund(this.props.contact._id, amount)
-    
-        // if (this.state.contact.coins - amount < 0) return alert('sorry, not enough balance')
-        // this.setState((prevState) =>
-        //     ({ contact: { ...prevState.contact, coins: prevState.contact.coins + amount } })
-        // )
+        this.props.addMove(this.props.contact._id, this.props.contact.name, amount)
     }
 
     async loadUser() {
@@ -69,7 +64,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-    getContactById, removeContact, transferFund
+    getContactById, removeContact, transferFund, addMove
 }
 
 export const ContactDetails = connect(mapStateToProps, mapDispatchToProps)(_ContactDetails)

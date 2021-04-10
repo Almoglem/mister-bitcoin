@@ -4,6 +4,7 @@ export const userService = {
     getUser,
     saveUser,
     transferFund,
+    addMove
 }
 
 ///only support 1 hard coded user for now
@@ -31,6 +32,18 @@ function saveUser(userToSave) {
 
 function transferFund(transferAmount) {
     gUser.coins -= transferAmount;
+    storageService.store(STORAGE_KEY, gUser)
+    return Promise.resolve({ ...gUser });
+}
+
+function addMove(contactId, contactName, transferAmount){
+    const move = {
+        toId: contactId,
+        to:contactName,
+        at: Date.now(),
+        amount: transferAmount
+    }
+    gUser.moves.push(move);
     storageService.store(STORAGE_KEY, gUser)
     return Promise.resolve({ ...gUser });
 }
