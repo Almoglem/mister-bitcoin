@@ -4,6 +4,33 @@ object-assign
 @license MIT
 */
 
+/*!
+     Transformation Matrix v2.0
+     (c) Epistemex 2014-2015
+     www.epistemex.com
+     By Ken Fyrstenberg
+     Contributions by leeoniya.
+     License: MIT, header required.
+     */
+
+/*!
+ * Chart.js v2.9.4
+ * https://www.chartjs.org
+ * (c) 2020 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*! Moment Duration Format v2.2.2
+     *  https://github.com/jsmreese/moment-duration-format
+     *  Date: 2018-02-16
+     *
+     *  Duration format plugin function for the Moment.js library
+     *  http://momentjs.com/
+     *
+     *  Copyright 2018 John Madhavan-Reese
+     *  Released under the MIT license
+     */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *
@@ -48,3 +75,12 @@ object-assign
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+/** @preserve
+  * package: sweetalert2-react-content v3.3.1
+  * file: dist/sweetalert2-react-content.umd.js
+  * homepage: https://github.com/sweetalert2/sweetalert2-react-content#readme
+  * license: MIT
+  **/
+
+//! moment.js
