@@ -19,11 +19,12 @@ export class TransferFund extends Component {
     }
 
     render() {
-        const { transferAmount } = this.state
+        const { transferAmount} = this.state
+        const {contactName} = this.props
         return (
-            <form onSubmit={this.transferFund}>
-
-                <label htmlFor="transferAmount"> Send payment: </label>
+            <form className="transfer-fund" onSubmit={this.transferFund}>
+                <h3>Send payment to {contactName}</h3>
+                <label htmlFor="transferAmount"></label>
                 <input required type="number" id="transferAmount" value={transferAmount} onChange={this.handleChange} name="transferAmount" />
 
                 <button>Send</button>

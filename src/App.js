@@ -1,5 +1,5 @@
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import { Home } from './pages/Home'
 import { Contacts } from './pages/Contacts'
 import { ContactDetails } from './pages/ContactDetails';

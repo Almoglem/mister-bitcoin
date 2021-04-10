@@ -38,15 +38,15 @@ export class ContactEdit extends Component {
         const { name, email, phone } = this.state.contact
         return (
             <section className="contact-edit">
-                <form className='contact-edit-form' onSubmit={this.saveContact}>
+                <form className='edit-form' onSubmit={this.saveContact}>
 
                     <label htmlFor="name">Name</label>
                     <input required type="text" id="name" value={name} onChange={this.handleChange} name="name" />
 
-                    <label htmlFor="email">email</label>
+                    <label htmlFor="email">Email</label>
                     <input required type="email" id="email" value={email} onChange={this.handleChange} name="email" />
 
-                    <label htmlFor="phone">phone</label>
+                    <label htmlFor="phone">Phone</label>
                     <input required type="phone" id="phone" value={phone} onChange={this.handleChange} name="phone" />
 
                     <button>Save</button>

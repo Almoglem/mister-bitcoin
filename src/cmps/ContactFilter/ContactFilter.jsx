@@ -20,7 +20,7 @@ export class ContactFilter extends Component {
         return (
             <form className="contact-filter" onSubmit={(ev) => ev.preventDefault()}>
             <label htmlFor="term"></label>
-            <input placeholder="Search..." id="term" name="term" value={term} onChange={this.handleChange}/>
+            <input placeholder="Search by name, phone or mail" id="term" name="term" value={term} onChange={this.handleChange}/>
             </form>
             )
     }

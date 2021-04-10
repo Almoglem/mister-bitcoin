@@ -1,1 +1,17 @@
-.contactEdit {}
+.contact-edit {
+    .edit-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 5px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    }
+}

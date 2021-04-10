@@ -7,7 +7,6 @@ export function ContactList({ contacts }) {
     return (
         contacts &&
         <section>
-            <h3>Contacts</h3>
             <ul className="contact-list">
                 {contacts.map(contact => (
                     <ContactPreview

@@ -1,8 +1,13 @@
 .contact-preview {
-    margin: 5px;
-    padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
-    width: 300px;
-    margin: auto;
+    width: 200px;
+    padding: 5px;
+    margin: 10px auto;
+    text-align: left;
+
+    .contact-img {
+        margin-inline-end: 20px;
+        width: 50px;
+    }
 }
