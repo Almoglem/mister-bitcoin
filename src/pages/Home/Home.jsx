@@ -2,27 +2,26 @@
 import './Home.scss'
 
 import { Component } from 'react'
-import { userService } from '../../services/userService'
 import { bitcoinService } from '../../services/bitcoinService'
+import { connect } from 'react-redux';
+import { setUser } from '../../store/actions/userActions';
 
-export class Home extends Component {
+class _Home extends Component {
     state = {
-        user: null,
         rate: null
     }
-    componentDidMount() {
-        this.loadUser();
+    async componentDidMount() {
+        await this.props.setUser();
+        this.loadRate();
     }
-    async loadUser() {
-        const user = await userService.getUser();
-        this.setState({ user }, () => { this.loadRate() })
-    }
+
     async loadRate() {
-        const rate = await bitcoinService.getRate(this.state.user.coins);
+        const rate = await bitcoinService.getRate(this.props.user.coins);
         this.setState({ rate })
     }
     render() {
-        const { user, rate } = this.state
+        const { user } = this.props
+        const { rate } = this.state
         return (
             user && rate && (
                 <section>
@@ -36,3 +35,13 @@ export class Home extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    user: state.userReducer.user
+})
+
+const mapDispatchToProps = {
+    setUser
+}
+
+export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)

@@ -1,30 +1,28 @@
 
 import { Component } from 'react'
-import { contactService } from '../../services/contactService'
 import { ContactFilter } from '../../cmps/ContactFilter'
 import { ContactList } from '../../cmps/ContactList'
+import { connect } from 'react-redux';
+import { loadContacts } from '../../store/actions/contactActions';
 
 import './Contacts.scss'
 import { Link } from 'react-router-dom'
 
-export class Contacts extends Component {
+class _Contacts extends Component {
     state = {
-        contacts: null,
         filterBy: null
     }
 
     componentDidMount() {
-        this.loadContacts();
+        this.props.loadContacts();
     }
-    async loadContacts() {
-        const contacts = await contactService.getContacts(this.state.filterBy);
-        this.setState({ contacts })
-    }
+
+
     onChangeFilter = (filterBy) => {
-        this.setState({ filterBy }, this.loadContacts)
+        this.props.loadContacts(filterBy);
     }
     render() {
-        const { contacts } = this.state
+        const { contacts } = this.props
         return (
             contacts &&
             <div>
@@ -37,3 +35,13 @@ export class Contacts extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    contacts: state.contactReducer.contacts
+})
+
+const mapDispatchToProps = {
+    loadContacts
+}
+
+export const Contacts = connect(mapStateToProps, mapDispatchToProps)(_Contacts)
