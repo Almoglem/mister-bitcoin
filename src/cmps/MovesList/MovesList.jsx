@@ -2,7 +2,7 @@ import './MovesList.scss'
 import Moment from 'react-moment';
 
 export const MovesList = ({moves}) => {
-    if (!moves.length) return <div>No activity yet</div>
+    if (!moves.length) return <div className="moves-list">No activity yet</div>
     return (
         <section className="moves-list">
             <ul>
