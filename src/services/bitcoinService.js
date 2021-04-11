@@ -8,28 +8,23 @@ export const bitcoinService = {
 }
 
 async function getRate(coins, currency = 'USD') {
-    const rate = (storageService.load('rate'));
-    if (rate) {
-        return rate;
-    }
+    const rate = storageService.load('rate');
+    if (rate) return rate;
     try {
-        const { data } = await Axios.get(
-            `https://blockchain.info/ticker`
-        );
+        const { data } = await Axios.get(`https://blockchain.info/ticker`);
         const res = data[currency].last * coins;
         storageService.store('rate', res);
         return res;
     }
     catch (err) {
-        console.log(err);
+        console.log('cannot get rate', err);
+        throw err;
     }
 }
 
 async function getMarketPrice() {
     const marketPrice = (storageService.load('market price'));
-    if (marketPrice) {
-        return marketPrice;
-    }
+    if (marketPrice) return marketPrice;
     try {
         const { data } = await Axios.get('https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true');
         storageService.store('market price', data)
@@ -42,9 +37,7 @@ async function getMarketPrice() {
 
 async function getTradeVolume() {
     const tradeVolume = (storageService.load('trade volume'));
-    if (tradeVolume) {
-        return tradeVolume;
-    }
+    if (tradeVolume) return tradeVolume;
     try {
         const { data } = await Axios.get('https://api.blockchain.info/charts/trade-volume?timespan=5months&format=json&cors=true');
         storageService.store('trade volume', data)

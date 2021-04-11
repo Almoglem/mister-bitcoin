@@ -8,9 +8,7 @@ import { AppHeader } from './cmps/AppHeader'
 import { ContactEdit } from './pages/ContactEdit/ContactEdit';
 
 function App() {
-
-
-
+  //// load user from local storage
   return (
     <Router>
       <div className="App">

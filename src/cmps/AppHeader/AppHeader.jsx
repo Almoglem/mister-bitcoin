@@ -8,7 +8,7 @@ const _AppHeader = (props) => {
     return (
         <div className="app-header">
             <NavLink exact to="/" >
-                <h1 className="logo" >Mr.BitCoin</h1>
+                <h1 className="logo" >Mr.฿itCoin</h1>
             </NavLink>
             <ul>
                 <li><NavLink to="/contacts" activeClassName="active-nav" >Contacts</NavLink></li>

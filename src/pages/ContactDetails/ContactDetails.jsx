@@ -4,8 +4,8 @@ import { TransferFund } from '../../cmps/TransferFund/TransferFund';
 import { connect } from 'react-redux';
 import { getContactById, removeContact } from '../../store/actions/contactActions';
 import { transferFund, addMove } from '../../store/actions/userActions';
-import {MovesList} from  '../../cmps/MovesList';
-import {utilService} from '../../services/utilService'
+import { MovesList } from '../../cmps/MovesList';
+import { utilService } from '../../services/utilService'
 
 import './ContactDetails.scss'
 
@@ -27,8 +27,8 @@ class _ContactDetails extends Component {
     }
 
     transferFund = (amount) => {
-        if(amount > this.props.user.coins) return utilService.showMsg('Not enough balance')
-        if(amount <=0 ) return utilService.showMsg('Please enter a number higher than 0')
+        if (amount > this.props.user.coins) return utilService.showMsg('Not enough balance')
+        if (amount <= 0) return utilService.showMsg('Please enter a number higher than 0')
 
         this.props.transferFund(this.props.contact._id, amount)
         this.props.addMove(this.props.contact._id, this.props.contact.name, amount)
@@ -46,17 +46,17 @@ class _ContactDetails extends Component {
                 <img className="contact-img" src={`https://robohash.org/${contact._id}.png`} alt="contact-img" />
 
                 <div className="info-container container">
-                <h4>{contact.name}</h4>
-                <p>{contact.email}</p>
-                <p>{contact.phone}</p>
+                    <h4>{contact.name}</h4>
+                    <p>{contact.email}</p>
+                    <p>{contact.phone}</p>
                 </div>
 
                 <div className="actions-container container">
-                <Link to={'/contact/edit/' + contact._id}><i class="fas fa-pen"></i> Edit</Link> ||
-                <button className="clean-button" onClick={this.removeContact}><i class="far fa-trash-alt"></i> Delete</button>
+                    <Link to={'/contact/edit/' + contact._id}><i className="fas fa-pen"></i> Edit</Link> ||
+                <button className="clean-button" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
                 </div>
                 <TransferFund transferFund={this.transferFund} contactName={contact.name} />
-                <MovesList moves={ user.moves.filter(move => move.toId === contact._id)}/>
+                <MovesList moves={user.moves.filter(move => move.toId === contact._id)} />
             </section>
         )
     }
