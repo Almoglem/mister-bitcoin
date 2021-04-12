@@ -10,8 +10,14 @@
 
         input {
             padding: 5px;
-            width: 200px;
+            width: 250px;
             margin-bottom: 10px;
+            background-color: inherit;
+            color: #d4d3d3;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid #d4d3d3;
+            font-size: 1.2rem;
         }
     }
 }

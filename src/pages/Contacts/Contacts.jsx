@@ -25,12 +25,12 @@ class _Contacts extends Component {
         const { contacts } = this.props
         return (
             contacts &&
-            <div>
+            <div className="contact-page">
                 <ContactFilter onChangeFilter={this.onChangeFilter} />
                 <ContactList
                     contacts={contacts}
                 />
-                <Link to="/contact/edit">Add Contact</Link>
+                <Link to="/contact/edit" ><button className="add-contact">+</button></Link>
             </div>
         )
     }

@@ -1,6 +1,9 @@
 /* VARS */
 $base-white: #d4d3d3;
 
+html {
+  font-size: 16px;
+}
 
 /* BASICS */
 .App {
@@ -41,6 +44,7 @@ button {
 
 .subtitle {
   color: #a0a0a0;
+  text-transform: uppercase;
 }
 
 /* HELPERS */
@@ -49,4 +53,15 @@ button {
   background-color: inherit;
   border: none;
   color: $base-white;
+}
+
+// BUTTONS
+
+.green-btn {
+  color: $base-white;
+  background-color: rgb(22, 104, 22);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }

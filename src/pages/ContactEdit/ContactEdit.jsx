@@ -40,16 +40,16 @@ export class ContactEdit extends Component {
             <section className="contact-edit">
                 <form className='edit-form' onSubmit={this.saveContact}>
 
-                    <label htmlFor="name">Name</label>
-                    <input required type="text" id="name" value={name} onChange={this.handleChange} name="name" />
+                    <label htmlFor="name"></label>
+                    <input required placeholder="Name" type="text" id="name" value={name} onChange={this.handleChange} name="name" />
 
-                    <label htmlFor="email">Email</label>
-                    <input required type="email" id="email" value={email} onChange={this.handleChange} name="email" />
+                    <label htmlFor="email"></label>
+                    <input required placeholder="Email" type="email" id="email" value={email} onChange={this.handleChange} name="email" />
 
-                    <label htmlFor="phone">Phone</label>
-                    <input required type="phone" id="phone" value={phone} onChange={this.handleChange} name="phone" />
+                    <label htmlFor="phone"></label>
+                    <input required placeholder="Phone" type="phone" id="phone" value={phone} onChange={this.handleChange} name="phone" />
 
-                    <button>Save</button>
+                    <button className="green-btn">Save</button>
                 </form>
             </section>
         )

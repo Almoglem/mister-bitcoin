@@ -5,7 +5,7 @@ import { Component } from 'react'
 import { bitcoinService } from '../../services/bitcoinService'
 import { connect } from 'react-redux';
 import { setUser } from '../../store/actions/userActions';
-import {MovesList} from '../../cmps/MovesList'
+import { MovesList } from '../../cmps/MovesList'
 import { Player } from '@lottiefiles/react-lottie-player';
 
 
@@ -36,15 +36,16 @@ class _Home extends Component {
                             style={{ height: '300px', width: '300px' }}
                         >
                         </Player>
-                        <h2>Welcome, {user.name} </h2>
+                        <h3>Welcome, {user.name} </h3>
                         <div className="balance-container">
-                        <h5 className="subtitle">CURRENT BALANCE</h5>
-                        <p> BIT: <span className="bitcoin-balance"> ฿ {user.coins.toLocaleString()}  </span></p>
-                        <p> USD: $ {rate.toLocaleString()} </p>
+                            <h4 className="subtitle">Current balance</h4>
+                            <p> BIT: <span className="bitcoin-balance"> ฿ {user.coins.toLocaleString()}  </span></p>
+                            <p> USD: $ {rate.toLocaleString()} </p>
                         </div>
                     </div>
-                    <h5 className="subtitle">RECENT ACTIVITY</h5>
-                <MovesList moves={user.moves.slice(0,5)}/>
+                    <hr />
+                    <h4 className="subtitle">Recent activity</h4>
+                    <MovesList moves={user.moves.slice(0, 5)} isHome="true" />
                 </section>
             )
         );

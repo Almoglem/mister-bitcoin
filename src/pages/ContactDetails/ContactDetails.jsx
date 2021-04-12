@@ -56,6 +56,7 @@ class _ContactDetails extends Component {
                 <button className="clean-button" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
                 </div>
                 <TransferFund transferFund={this.transferFund} contactName={contact.name} />
+                <h5 className="subtitle">Your transfers to {contact.name}</h5>
                 <MovesList moves={user.moves.filter(move => move.toId === contact._id)} />
             </section>
         )

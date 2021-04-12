@@ -1,1 +1,14 @@
-.contacts {}
+.contact-page {
+    .add-contact {
+        background-color: #7ca2c5;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        height: 30px;
+        width: 30px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+    }
+}
