@@ -41,15 +41,20 @@ export class ContactEdit extends Component {
                 <form className='edit-form' onSubmit={this.saveContact}>
 
                     <label htmlFor="name"></label>
-                    <input required placeholder="Name" type="text" id="name" value={name} onChange={this.handleChange} name="name" />
+                    <input
+                        className="clean-input w-full font-large" required placeholder="Name" type="text" id="name" value={name} onChange={this.handleChange} name="name" />
 
                     <label htmlFor="email"></label>
-                    <input required placeholder="Email" type="email" id="email" value={email} onChange={this.handleChange} name="email" />
+                    <input
+                        className="clean-input w-full font-large"
+                        required placeholder="Email" type="email" id="email" value={email} onChange={this.handleChange} name="email" />
 
                     <label htmlFor="phone"></label>
-                    <input required placeholder="Phone" type="phone" id="phone" value={phone} onChange={this.handleChange} name="phone" />
+                    <input
+                        className="clean-input w-full font-large"
+                        required placeholder="Phone" type="phone" id="phone" value={phone} onChange={this.handleChange} name="phone" />
 
-                    <button className="green-btn">Save</button>
+                    <button className="purple-btn font-large w-80">Save</button>
                 </form>
             </section>
         )

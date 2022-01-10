@@ -1,23 +1,18 @@
 .contact-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .edit-form {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 50%;
 
         label {
             margin-bottom: 5px;
         }
 
-        input {
-            padding: 5px;
-            width: 250px;
-            margin-bottom: 10px;
-            background-color: inherit;
-            color: #d4d3d3;
-            outline: none;
-            border: none;
-            border-bottom: 2px solid #d4d3d3;
-            font-size: 1.2rem;
-        }
+
     }
 }

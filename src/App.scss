@@ -1,6 +1,6 @@
 /* VARS */
 $base-white: #d4d3d3;
-$light-purple: #c46c95;
+$light-purple: #754e93;
 
 html {
   font-size: 16px;
@@ -50,6 +50,30 @@ button {
 
 /* HELPERS */
 
+.font-large {
+  font-size: 1.2rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+// INPUTS
+
+.clean-input {
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: inherit;
+  color: #d4d3d3;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #d4d3d3;
+}
+
 // BUTTONS
 
 .clean-button {
@@ -66,7 +90,11 @@ button {
 }
 
 .purple-btn {
-  color: black;
+  border-radius: 30px;
+  color: $base-white;
   background-color: $light-purple;
 
+  a {
+    color: base-white;
+  }
 }

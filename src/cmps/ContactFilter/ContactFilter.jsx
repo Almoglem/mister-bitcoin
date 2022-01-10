@@ -7,7 +7,7 @@ export class ContactFilter extends Component {
         term: ''
     };
 
-    handleChange= ({target}) => {
+    handleChange = ({ target }) => {
         const field = target.name;
         const value = target.type === 'number' ? +target.value : target.value;
         this.setState({ [field]: value }, () => {
@@ -16,13 +16,13 @@ export class ContactFilter extends Component {
 
     }
     render() {
-        const {term} = this.state
+        const { term } = this.state
         return (
             <form className="contact-filter" onSubmit={(ev) => ev.preventDefault()}>
-            <label htmlFor="term"></label>
-            <input placeholder="Search by name, phone or mail" id="term" name="term" value={term} onChange={this.handleChange}/>
+                <label htmlFor="term"></label>
+                <input className="clean-input" placeholder="Search by name, phone or mail" id="term" name="term" value={term} onChange={this.handleChange} />
             </form>
-            )
+        )
     }
 }
 

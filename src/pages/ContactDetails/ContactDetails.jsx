@@ -52,8 +52,9 @@ class _ContactDetails extends Component {
                 </div>
 
                 <div className="actions-container container">
-                    <Link to={'/contact/edit/' + contact._id}><i className="fas fa-pen"></i> Edit</Link> ||
-                    <button className="clean-button" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
+                    <button className="purple-btn">
+                        <Link to={'/contact/edit/' + contact._id}><i className="fas fa-pen"></i> Edit</Link> </button>
+                    <button className="purple-btn" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
                 </div>
                 <TransferFund transferFund={this.transferFund} contactName={contact.name} />
                 <h5 className="subtitle">Your transfers to {contact.name}</h5>

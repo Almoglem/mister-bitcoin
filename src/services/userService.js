@@ -13,7 +13,7 @@ export const userService = {
 
 const STORAGE_KEY = 'user'
 const gDefultUser = {
-    name: "Almog Lemberg",
+    name: "Guest",
     coins: 500,
     moves: []
 }
@@ -37,11 +37,11 @@ function transferFund(transferAmount) {
     return Promise.resolve({ ...gUser });
 }
 
-function addMove(contactId, contactName, transferAmount){
+function addMove(contactId, contactName, transferAmount) {
     const move = {
         _id: utilService.makeId(),
         toId: contactId,
-        to:contactName,
+        to: contactName,
         at: Date.now(),
         amount: transferAmount,
     }
