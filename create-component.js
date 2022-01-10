@@ -132,4 +132,3 @@ try {
     console.log("index file created successfully");
 } catch (e) {
     console.log('ERROR:', e.message ? e.message : e)
-}

@@ -53,11 +53,11 @@ class _ContactDetails extends Component {
 
                 <div className="actions-container container">
                     <Link to={'/contact/edit/' + contact._id}><i className="fas fa-pen"></i> Edit</Link> ||
-                <button className="clean-button" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
+                    <button className="clean-button" onClick={this.removeContact}><i className="far fa-trash-alt"></i> Delete</button>
                 </div>
                 <TransferFund transferFund={this.transferFund} contactName={contact.name} />
                 <h5 className="subtitle">Your transfers to {contact.name}</h5>
-                <MovesList moves={user.moves.filter(move => move.toId === contact._id)} />
+                <MovesList moves={user?.moves.filter(move => move.toId === contact._id)} />
             </section>
         )
     }

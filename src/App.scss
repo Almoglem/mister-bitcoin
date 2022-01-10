@@ -1,5 +1,6 @@
 /* VARS */
 $base-white: #d4d3d3;
+$light-purple: #c46c95;
 
 html {
   font-size: 16px;
@@ -49,19 +50,23 @@ button {
 
 /* HELPERS */
 
+// BUTTONS
+
 .clean-button {
   background-color: inherit;
   border: none;
   color: $base-white;
 }
 
-// BUTTONS
-
-.green-btn {
-  color: $base-white;
-  background-color: rgb(22, 104, 22);
+button {
   border: none;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.purple-btn {
+  color: black;
+  background-color: $light-purple;
+
 }

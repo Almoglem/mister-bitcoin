@@ -32,7 +32,7 @@ class _Home extends Component {
                         <Player
                             autoplay
                             loop
-                            src="https://assets7.lottiefiles.com/packages/lf20_HzCLVo.json"
+                            src="https://assets3.lottiefiles.com/packages/lf20_ltbqacam.json"
                             style={{ height: '300px', width: '300px' }}
                         >
                         </Player>
