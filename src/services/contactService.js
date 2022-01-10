@@ -34,6 +34,36 @@ const gDefaultContacts = [
     "name": "Rachel Lowe",
     "email": "rachellowe@renovize.com",
     "phone": "+1 (911) 475-2312",
+  },
+  {
+    "_id": "5a566402ed1cf349340b47b4d",
+    "name": "Roy Cantu",
+    "email": "roycantu@renovize.com",
+    "phone": "+1 (911) 423-5743",
+  },
+  {
+    "_id": "5a566402ed1cf4340b47b4d",
+    "name": "Rosanne Shelton",
+    "email": "rosy@renovize.com",
+    "phone": "+1 (911) 321-7424",
+  },
+  {
+    "_id": "5a566402edb4d",
+    "name": "Danny Dean",
+    "email": "danny@renovize.com",
+    "phone": "+1 (911) 344-8542",
+  },
+  {
+    "_id": "5a56640534543d",
+    "name": "Florance",
+    "email": "flora123@renovize.com",
+    "phone": "+1 (911) 544-6788",
+  },
+  {
+    "_id": "5a56640543344543d",
+    "name": "Mom",
+    "email": "anat@renovize.com",
+    "phone": "+1 (911) 333-5689",
   }
 ];
 

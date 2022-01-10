@@ -36,7 +36,7 @@ class _Home extends Component {
                             style={{ height: '300px', width: '300px' }}
                         >
                         </Player>
-                        <h3>Welcome, {user.name} </h3>
+                        <h3>Welcome </h3>
                         <div className="balance-container">
                             <h4 className="subtitle">Current balance</h4>
                             <p> BIT: <span className="bitcoin-balance"> ฿ {user.coins.toLocaleString()}  </span></p>

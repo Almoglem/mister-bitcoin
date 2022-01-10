@@ -1,13 +1,13 @@
 .contact-preview {
-    border: 1px solid gray;
-    border-radius: 5px;
     width: 200px;
     padding: 5px;
     margin: 10px auto;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .contact-img {
-        margin-inline-end: 20px;
-        width: 50px;
+        width: 150px;
+        margin-bottom: 15px;
     }
 }

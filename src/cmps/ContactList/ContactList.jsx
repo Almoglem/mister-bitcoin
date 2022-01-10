@@ -7,14 +7,14 @@ export function ContactList({ contacts }) {
     return (
         contacts &&
         <section>
-            <ul className="contact-list">
+            <div className="contact-list">
                 {contacts.map(contact => (
                     <ContactPreview
                         contact={contact}
                         key={contact._id}
                     />
                 ))}
-            </ul>
+            </div>
         </section>
     )
 
