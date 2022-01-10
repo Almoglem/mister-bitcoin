@@ -26,6 +26,7 @@ export class TransferFund extends Component {
                 <h3>Wanna transfer coins to {contactName}? </h3>
                 <label htmlFor="transferAmount"></label>
                 <input required
+                    placeholder="Amount to transfer"
                     min="1"
                     type="number" id="transferAmount" value={transferAmount} onChange={this.handleChange} name="transferAmount" />
 
